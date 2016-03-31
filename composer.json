@@ -11,7 +11,14 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "lajax/yii2-language-picker": "*",
+        "lajax/yii2-translate-manager": "*",
+        "nemmo/yii2-attachments": "dev-master",
+        "developeruz/yii2-db-rbac": "*",
+        "codezeen/yii2-adminlte": "*",
+        "zelenin/yii2-slug-behavior": "~1.0@stable"
+        
     },
     "autoload": {
         "psr-4": {
