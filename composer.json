@@ -10,12 +10,7 @@
             "email": "mudrui@gmail.com"
         }
     ],
-    "repositories":[
-    {
-        "type": "git",
-        "url": "https://github.com/dyar74/yii2-admin.git"
-    }
-    ],
+    
     "require": {
         "yiisoft/yii2": "*",
         "lajax/yii2-language-picker": "*",
