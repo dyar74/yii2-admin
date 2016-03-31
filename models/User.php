@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace app\models;
+namespace dyar74\admin\models;
 
 use dektrium\user\models\User as BaseUser;
 use developeruz\db_rbac\interfaces\UserRbacInterface;
