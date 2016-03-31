@@ -1,0 +1,21 @@
+{
+    "name": "dyar74/yii2-admin",
+    "description": "Admin ",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "dyar74",
+            "email": "mudrui@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "dyar74\\admin\\": ""
+        }
+    }
+}
