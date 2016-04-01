@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-namespace dyar74\admin\modules\admin;
+namespace dyar74\admin;
 use yii\base\Module as BaseAdminModule;
 //use asdfstudio\admin\Module as BaseAdminModule;
 //use app\modules\admin\entities\UserEntity;

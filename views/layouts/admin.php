@@ -14,12 +14,12 @@ use yii\widgets\Breadcrumbs;
 use codezeen\yii2\adminlte\widgets\Alert;
 use lajax\translatemanager\bundles\TranslateManagerAsset;
 TranslateManagerAsset::register($this);
-$this->beginContent('@vendors/dyar74/admin/views/layouts/blank.php');
+$this->beginContent('@vendor/dyar74/yii2-admin/views/layouts/blank.php');
 //\lajax\translatemanager\helpers\Language::registerAssets();
 ?>
     <div class="wrapper">
-        <?= $this->render('@vendors/dyar74/admin/views/layouts/main-header'); ?>
-        <?= $this->render('@vendors/dyar74/admin/layouts/main-sidebar'); ?>
+        <?= $this->render('main-header'); ?>
+        <?= $this->render('main-sidebar'); ?>
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
@@ -38,7 +38,7 @@ $this->beginContent('@vendors/dyar74/admin/views/layouts/blank.php');
                 <?= $content; ?>
             </section>
         </div>
-        <?= $this->render('@vendors/dyar74/admin/views/layouts/main-footer'); ?>
+        <?= $this->render('main-footer'); ?>
     </div>
 <?php
 $this->endContent();
