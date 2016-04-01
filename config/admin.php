@@ -7,6 +7,28 @@ return [
         ],
         'pages' => [
             'class' => 'bupy7\pages\Module',
+            'pathToImages' => '@webroot/uploads/images',
+            'urlToImages' => '@webroot/uploads/images',
+            'pathToFiles' => '@webroot/uploads/files',
+            'urlToFiles' => '@webroot/uploads/files',
+            'uploadImage' => true,
+            'uploadFile' => true,
+            'addImage' => true,
+            'addFile' => true,
+            'controllerMap' => [
+                'manager' => [
+                    'class' => 'bupy7\pages\controllers\ManagerController',
+                    'as access' => [
+                        'class' => AccessControl::className(),
+                        'rules' => [
+                            [
+                                'allow' => true,
+                                'roles' => ['admin'],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
         'gallery' => [
             'class' => 'sadovojav\gallery\Module',
@@ -98,6 +120,7 @@ return [
                 '/admin/translatemanager/language/list' => '/translatemanager/language/list',
                 '/admin/translatemanager/language/scan' => '/translatemanager/language/scan',
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
+                'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',
             //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'

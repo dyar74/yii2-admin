@@ -37,10 +37,13 @@ use codezeen\yii2\adminlte\widgets\Menu;
 
         <?php
         $admin_site_menu[0] = ['label' => Yii::t('app', 'MAIN NAVIGATION'), 'options' => ['class' => 'header'], 'template' => '{label}'];
-        $admin_site_menu[1] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/admin']];
-        $admin_site_menu[2] = ['label' => Yii::t('app', 'Roles'), 'url' => ['/permit/access/role']];
-        $admin_site_menu[3] = ['label' => Yii::t('app', 'Permissions'), 'url' => ['/permit/access/permission']];
-        $admin_site_menu[6] = 
+        $admin_site_menu[10] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/admin']];
+        $admin_site_menu[20] = ['label' => Yii::t('app', 'Roles'), 'url' => ['/permit/access/role']];
+        $admin_site_menu[30] = ['label' => Yii::t('app', 'Permissions'), 'url' => ['/permit/access/permission']];
+        $admin_site_menu[40] = ['label' => Yii::t('app', 'Gallery'), 'url' => ['/gallery/gallery/index']];
+        $admin_site_menu[50] = ['label' => Yii::t('app', 'Page'), 'url' => ['/page']];
+        $admin_site_menu[50] = ['label' => Yii::t('app', 'Menu'), 'url' => ['/menu']];
+        $admin_site_menu[60] = 
             ['label' => Yii::t('language', 'Language'),  'options' => ['class' => 'treeview'], 'items' => [
                     [ 'label' => Yii::t('language', 'List of languages'), 'url' => ['/admin/translatemanager/language/list']],
                     [ 'label' => Yii::t('language', 'Create'), 'url' => ['/admin/translatemanager/language/create']],
@@ -48,8 +51,8 @@ use codezeen\yii2\adminlte\widgets\Menu;
                     [ 'label' => Yii::t('language', 'Optimize'), 'url' => ['/admin/translatemanager/language/optimizer']],
                 ]
        ];
-     
-        $admin_site_menu[20] = ['label' => Yii::t('app', 'User'),  'options' => ['class' => 'treeview'], 'items' => [
+        $admin_site_menu[70] = ['label' => Yii::t('app', 'Utilities'), 'url' => ['/utility']];
+        $admin_site_menu[200] = ['label' => Yii::t('app', 'User'),  'options' => ['class' => 'treeview'], 'items' => [
                 [ 'label' => Yii::t('app', 'Login'), 'url' => ['/user/login'], 'visible' => Yii::$app->user->isGuest],
                 [ 'label' => Yii::t('app', 'Logout'), 'url' => ['/user/logout'], 'linkOptions' => ['data-method' => 'post'], 'visible' => !Yii::$app->user->isGuest],
         ]];
