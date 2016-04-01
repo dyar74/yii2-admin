@@ -1,9 +1,19 @@
 <?php
 return [
     'bootstrap' => [ 'translatemanager'],
-   
     'modules' => [
-      
+        'utility' => [
+            'class' => 'c006\utility\migration\Module',
+        ],
+        'pages' => [
+            'class' => 'bupy7\pages\Module',
+        ],
+        'gallery' => [
+            'class' => 'sadovojav\gallery\Module',
+        ],
+        'menu' => [
+            'class' => '\pceuropa\menu\Module',
+        ],
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
@@ -53,14 +63,13 @@ return [
             'params' => [
                 'userClass' => 'dyar74\admin\models\User',
             ]
-         ],
+        ],
     ],
     'components' => [
-        
+
         'translatemanager' => [
             'class' => 'lajax\translatemanager\Component',
         ],
-       
         'languagepicker' => [
             'class' => 'lajax\languagepicker\Component',
             'languages' => function () {                        // List of available languages (icons only)
@@ -76,10 +85,9 @@ return [
           }
           } */
         ],
-        
         'urlManager' => [
-         //   'enablePrettyUrl' => true,
-          //  'showScriptName' => false,
+            //   'enablePrettyUrl' => true,
+            //  'showScriptName' => false,
             'rules' => [
                 '<module:\w+>/<controller:\w+>/<action:(\w|-)+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:(\w|-)+>/<id:\d+>' => '<module>/<controller>/<action>',
@@ -90,10 +98,9 @@ return [
                 '/admin/translatemanager/language/list' => '/translatemanager/language/list',
                 '/admin/translatemanager/language/scan' => '/translatemanager/language/scan',
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
-                
-             //   '/admin/user/admin/create' => '/user/admin/create',
-             //   '/admin/user/admin' => '/user/admin',
-             //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'
+            //   '/admin/user/admin/create' => '/user/admin/create',
+            //   '/admin/user/admin' => '/user/admin',
+            //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'
             ],
         ],
         'user' => [
@@ -109,7 +116,6 @@ return [
                 ],
             ],
         ],
-       
         'i18n' => [
             'translations' => [
                 '*' => [
