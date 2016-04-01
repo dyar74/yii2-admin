@@ -111,7 +111,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'buttons' =>
              [
                  'permit' => function ($url, $model) {
-                     return Html::a('<span class="glyphicon glyphicon-wrench"></span>', Url::to(['/permit/user/view', 'id' => $model->id]), [
+                     return Html::a('<span class="glyphicon glyphicon-wrench"></span>', Url::to(['admin/permit/user/view', 'id' => $model->id]), [
                          'title' => Yii::t('app', 'Change user role')
                      ]); },
              ]
