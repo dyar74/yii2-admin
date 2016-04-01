@@ -19,7 +19,7 @@
         "codezeen/yii2-adminlte": "*",
         "zelenin/yii2-slug-behavior": "~1.0@stable",
         "dektrium/yii2-user": "0.9.5@dev",
-        
+        "spanjeta/yii2-backup": "*",
         "pceuropa/yii2-menu":"dev-master",
         "c006/yii2-migration-utility": "dev-master"
       

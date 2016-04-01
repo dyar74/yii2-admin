@@ -6,6 +6,10 @@ return [
             'class' => 'c006\utility\migration\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
+        'backup' => [
+            'class' => 'spanjeta\modules\backup\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+        ],
         // 'pages' => [
         //   'class' => 'bupy7\pages\Module',
         //  'pathToImages' => '@webroot/uploads/images',
