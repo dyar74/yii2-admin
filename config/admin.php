@@ -4,37 +4,46 @@ return [
     'modules' => [
         'utility' => [
             'class' => 'c006\utility\migration\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        'pages' => [
-            'class' => 'bupy7\pages\Module',
-            'pathToImages' => '@webroot/uploads/images',
-            'urlToImages' => '@webroot/uploads/images',
-            'pathToFiles' => '@webroot/uploads/files',
-            'urlToFiles' => '@webroot/uploads/files',
-            'uploadImage' => true,
-            'uploadFile' => true,
-            'addImage' => true,
-            'addFile' => true,
-            'controllerMap' => [
-                'manager' => [
-                    'class' => 'bupy7\pages\controllers\ManagerController',
-                    'as access' => [
-                        'class' => AccessControl::className(),
-                        'rules' => [
-                            [
-                                'allow' => true,
-                                'roles' => ['admin'],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
+        // 'pages' => [
+        //   'class' => 'bupy7\pages\Module',
+        //  'pathToImages' => '@webroot/uploads/images',
+        //   'urlToImages' => '@webroot/uploads/images',
+        //   'pathToFiles' => '@webroot/uploads/files',
+        //  'urlToFiles' => '@webroot/uploads/files',
+        //   'uploadImage' => true,
+        //  'uploadFile' => true,
+        //  'addImage' => true,
+        //   'addFile' => true,
+        /*  'controllerMap' => [
+          'manager' => [
+          'class' => 'bupy7\pages\controllers\ManagerController',
+          'as access' => [
+          'class' => AccessControl::className(),
+          'rules' => [
+          [
+          'allow' => true,
+          'roles' => ['admin'],
+          ],
+          ],
+          ],
+          ],
+          ],
+          ], */
         'gallery' => [
-            'class' => 'sadovojav\gallery\Module',
+            'class' => 'sya\gallery\Module',
+            'syaDirPath' => '@webroot/',
+            'syaDirUrl' => '/',
+            'syaDirUpload' => 'uploads',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
         'menu' => [
-            'class' => '\pceuropa\menu\Module',
+            'class' => 'pceuropa\menu\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+        ],
+        'gridview' => [
+            'class' => '\kartik\grid\Module'
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
