@@ -1,18 +1,18 @@
 <?php
-$admin_layout = '@vendor/dyar74/yii2-admin/views/layouts/admin.php';
 return [
-
+    'bootstrap' => [ 'translatemanager'],
+    'language' => 'uk-UA',
     'modules' => [
-        'admin' => [
+       /* 'admin' => [
             'class' => 'dyar74\admin\AdminModule',
-        ],
+        ],*/
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
             'confirmWithin' => 21600,
             'cost' => 12,
             'admins' => ['admin'],
-            'layout' => $admin_layout,
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'modelMap' => [
                 'User' => 'dyar74\admin\models\User',
             ],
@@ -21,7 +21,7 @@ return [
             'class' => 'lajax\translatemanager\Module',
             // 'layout' => '@app/views/layouts/adm',
             'root' => '@app', // The root directory of the project scan.
-            'layout' => $admin_layout, // Name of the used layout. If using own layout use 'null'.
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php', // Name of the used layout. If using own layout use 'null'.
             'allowedIPs' => ['127.0.0.1', '10.21.146.*', '213.111.122.199'], // IP addresses from which the translation interface is accessible.
             'roles' => ['admin', 'editor'], // For setting access levels to the translating interface.
             'tmpDir' => '@runtime', // Writable directory for the client-side temporary language files. 
@@ -42,7 +42,7 @@ return [
         ],
         'permit' => [
             'class' => 'developeruz\db_rbac\Yii2DbRbac',
-            'layout' => $admin_layout,
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'as access' => [ // if you need to set access
                 'class' => 'yii\filters\AccessControl',
                 'rules' => [
@@ -53,7 +53,7 @@ return [
                 ]
             ],
             'params' => [
-                'userClass' => 'adyar74\admin\models\User',
+                'userClass' => 'dyar74\admin\models\User',
             ]
          ],
     ],
@@ -61,9 +61,6 @@ return [
         
         'translatemanager' => [
             'class' => 'lajax\translatemanager\Component',
-        ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
         ],
        
         'languagepicker' => [
@@ -81,12 +78,10 @@ return [
           }
           } */
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
-        ],
+        
         'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
+         //   'enablePrettyUrl' => true,
+          //  'showScriptName' => false,
             'rules' => [
                 '<module:\w+>/<controller:\w+>/<action:(\w|-)+>' => '<module>/<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:(\w|-)+>/<id:\d+>' => '<module>/<controller>/<action>',
@@ -97,9 +92,10 @@ return [
                 '/admin/translatemanager/language/list' => '/translatemanager/language/list',
                 '/admin/translatemanager/language/scan' => '/translatemanager/language/scan',
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
-                'admin/user/admin/create' => '/user/admin/create',
-                'admin/user/admin' => '/user/admin',
-                'admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view'
+                
+             //   '/admin/user/admin/create' => '/user/admin/create',
+             //   '/admin/user/admin' => '/user/admin',
+             //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'
             ],
         ],
         'user' => [
@@ -115,16 +111,7 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
+       
         'i18n' => [
             'translations' => [
                 '*' => [
@@ -144,15 +131,6 @@ return [
                     'messageTable' => 'language_translate',
                 //         'cachingDuration' => 86400,
                 //         'enableCaching' => true,
-                ],
-            ],
-        ],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
                 ],
             ],
         ],

@@ -37,14 +37,14 @@ use codezeen\yii2\adminlte\widgets\Menu;
 
         <?php
         $admin_site_menu[0] = ['label' => Yii::t('app', 'MAIN NAVIGATION'), 'options' => ['class' => 'header'], 'template' => '{label}'];
-        $admin_site_menu[1] = ['label' => Yii::t('app', 'Users'), 'url' => ['admin/user']];
+        $admin_site_menu[1] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/admin']];
       
         $admin_site_menu[6] = 
             ['label' => Yii::t('language', 'Language'),  'options' => ['class' => 'treeview'], 'items' => [
-                    [ 'label' => Yii::t('language', 'List of languages'), 'url' => ['admin/translatemanager/language/list']],
-                    [ 'label' => Yii::t('language', 'Create'), 'url' => ['admin/translatemanager/language/create']],
-                    [ 'label' => Yii::t('language', 'Scan'), 'url' => ['admin/translatemanager/language/scan']],
-                    [ 'label' => Yii::t('language', 'Optimize'), 'url' => ['admin/translatemanager/language/optimizer']],
+                    [ 'label' => Yii::t('language', 'List of languages'), 'url' => ['/admin/translatemanager/language/list']],
+                    [ 'label' => Yii::t('language', 'Create'), 'url' => ['/admin/translatemanager/language/create']],
+                    [ 'label' => Yii::t('language', 'Scan'), 'url' => ['/admin/translatemanager/language/scan']],
+                    [ 'label' => Yii::t('language', 'Optimize'), 'url' => ['/admin/translatemanager/language/optimizer']],
                 ]
        ];
      
