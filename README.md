@@ -43,7 +43,7 @@ add to config web.php:
 $basePath = dirname(__DIR__);
 $webroot = dirname($basePath);
 'bootstrap' => ['admin'],
-
+'language' => 'uk-UA', // you default language
 'modules' => [
         'admin' => [
             'class' => 'dyar74\admin\AdminModule',

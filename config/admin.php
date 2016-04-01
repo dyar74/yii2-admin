@@ -1,11 +1,9 @@
 <?php
 return [
     'bootstrap' => [ 'translatemanager'],
-    'language' => 'uk-UA',
+   
     'modules' => [
-       /* 'admin' => [
-            'class' => 'dyar74\admin\AdminModule',
-        ],*/
+      
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
