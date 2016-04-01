@@ -31,13 +31,13 @@ return [
           ],
           ],
           ], */
-        'gallery' => [
+      /*  'gallery' => [
             'class' => 'sya\gallery\Module',
             'syaDirPath' => '@webroot/',
             'syaDirUrl' => '/',
             'syaDirUpload' => 'uploads',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-        ],
+        ],*/
         'menu' => [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
