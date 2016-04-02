@@ -46,9 +46,9 @@ return [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        'gridview' => [
+      /*  'gridview' => [
             'class' => '\kartik\grid\Module'
-        ],
+        ],*/
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
