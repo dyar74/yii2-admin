@@ -6,25 +6,8 @@ return [
             'class' => 'c006\utility\migration\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        'backup' => [
-            'class' => 'spanjeta\modules\backup\Module',
-            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-        ],
-        'pages' => [
-            'class' => 'dmstr\modules\pages\Module',
-            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-            'availableRoutes' => [
-                '/site/index' => '/site/index',
-                'admin/pages' => '/pages'
-            ],
-            'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['admin']
-                    ],
-                ]
-            
-        ],
+       
+        
         /*  'gallery' => [
           'class' => 'sya\gallery\Module',
           'syaDirPath' => '@webroot/',
@@ -125,8 +108,7 @@ return [
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
                 '/admin/menu' => '/menu',
                 '/admin/utility' => '/utility',
-                '/admin/backup' => '/backup',
-                '/admin/pages' => '/pages',
+                
             //    'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',
