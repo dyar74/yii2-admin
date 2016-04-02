@@ -10,45 +10,27 @@ return [
             'class' => 'spanjeta\modules\backup\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        // 'pages' => [
-        //   'class' => 'bupy7\pages\Module',
-        //  'pathToImages' => '@webroot/uploads/images',
-        //   'urlToImages' => '@webroot/uploads/images',
-        //   'pathToFiles' => '@webroot/uploads/files',
-        //  'urlToFiles' => '@webroot/uploads/files',
-        //   'uploadImage' => true,
-        //  'uploadFile' => true,
-        //  'addImage' => true,
-        //   'addFile' => true,
-        /*  'controllerMap' => [
-          'manager' => [
-          'class' => 'bupy7\pages\controllers\ManagerController',
-          'as access' => [
-          'class' => AccessControl::className(),
-          'rules' => [
-          [
-          'allow' => true,
-          'roles' => ['admin'],
-          ],
-          ],
-          ],
-          ],
-          ],
-          ], */
-      /*  'gallery' => [
-            'class' => 'sya\gallery\Module',
-            'syaDirPath' => '@webroot/',
-            'syaDirUrl' => '/',
-            'syaDirUpload' => 'uploads',
+        'pages' => [
+            'class' => 'dmstr\modules\pages\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-        ],*/
+            'availableRoutes' => [
+                '/site/index' => '/site/index',
+            ],
+        ],
+        /*  'gallery' => [
+          'class' => 'sya\gallery\Module',
+          'syaDirPath' => '@webroot/',
+          'syaDirUrl' => '/',
+          'syaDirUpload' => 'uploads',
+          'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+          ], */
         'menu' => [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-      /*  'gridview' => [
-            'class' => '\kartik\grid\Module'
-        ],*/
+        /*  'gridview' => [
+          'class' => '\kartik\grid\Module'
+          ], */
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
@@ -133,7 +115,11 @@ return [
                 '/admin/translatemanager/language/list' => '/translatemanager/language/list',
                 '/admin/translatemanager/language/scan' => '/translatemanager/language/scan',
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
-                'pages/<page:[\w-]+>' => 'pages/default/index',
+                '/admin/menu' => '/menu',
+                '/admin/utility' => '/utility',
+                '/admin/backup' => '/backup',
+                '/admin/pages' => '/pages',
+            //    'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',
             //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'
