@@ -17,6 +17,12 @@ return [
                 '/site/index' => '/site/index',
                 'admin/pages' => '/pages'
             ],
+            'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
             
         ],
         /*  'gallery' => [

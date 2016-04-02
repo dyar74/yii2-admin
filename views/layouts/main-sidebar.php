@@ -42,8 +42,9 @@ use codezeen\yii2\adminlte\widgets\Menu;
         $admin_site_menu[30] = ['label' => Yii::t('app', 'Permissions'), 'url' => ['/permit/access/permission']];
       //  $admin_site_menu[40] = ['label' => Yii::t('app', 'Gallery'), 'url' => ['/gallery/gallery/index']];
         $admin_site_menu[50] = ['label' => Yii::t('app', 'Backup'), 'url' => ['/admin/backup']];
-        $admin_site_menu[50] = ['label' => Yii::t('app', 'Menu'), 'url' => ['/admin/menu']];
-        $admin_site_menu[60] = 
+        $admin_site_menu[60] = ['label' => Yii::t('app', 'Menu'), 'url' => ['/admin/menu']];
+          $admin_site_menu[70] = ['label' => Yii::t('app', 'Pages'), 'url' => ['/admin/pages']];
+        $admin_site_menu[80] = 
             ['label' => Yii::t('language', 'Language'),  'options' => ['class' => 'treeview'], 'items' => [
                     [ 'label' => Yii::t('language', 'List of languages'), 'url' => ['/admin/translatemanager/language/list']],
                     [ 'label' => Yii::t('language', 'Create'), 'url' => ['/admin/translatemanager/language/create']],
@@ -51,7 +52,7 @@ use codezeen\yii2\adminlte\widgets\Menu;
                     [ 'label' => Yii::t('language', 'Optimize'), 'url' => ['/admin/translatemanager/language/optimizer']],
                 ]
        ];
-        $admin_site_menu[70] = ['label' => Yii::t('app', 'Utilities'), 'url' => ['/admin/utility']];
+        $admin_site_menu[90] = ['label' => Yii::t('app', 'Utilities'), 'url' => ['/admin/utility']];
         $admin_site_menu[200] = ['label' => Yii::t('app', 'User'),  'options' => ['class' => 'treeview'], 'items' => [
                 [ 'label' => Yii::t('app', 'Login'), 'url' => ['/user/login'], 'visible' => Yii::$app->user->isGuest],
                 [ 'label' => Yii::t('app', 'Logout'), 'url' => ['/user/logout'], 'linkOptions' => ['data-method' => 'post'], 'visible' => !Yii::$app->user->isGuest],
