@@ -15,7 +15,9 @@ return [
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'availableRoutes' => [
                 '/site/index' => '/site/index',
+                'admin/pages' => '/pages'
             ],
+            
         ],
         /*  'gallery' => [
           'class' => 'sya\gallery\Module',
