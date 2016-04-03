@@ -6,15 +6,16 @@ return [
             'class' => 'c006\utility\migration\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-       
-        
-        /*  'gallery' => [
-          'class' => 'sya\gallery\Module',
-          'syaDirPath' => '@webroot/',
-          'syaDirUrl' => '/',
-          'syaDirUpload' => 'uploads',
-          'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-          ], */
+        'pages' => [
+            'class' => 'infoweb\pages\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'enableSliders' => true,
+            'allowContentDuplication' => true,
+        ],
+        'gallery' => [
+            'class' => 'infoweb\gallery\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+        ],
         'menu' => [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
@@ -78,6 +79,9 @@ return [
         'translatemanager' => [
             'class' => 'lajax\translatemanager\Component',
         ],
+        'page' => [
+            'class' => 'infoweb\pages\components\Page'
+        ],
         'languagepicker' => [
             'class' => 'lajax\languagepicker\Component',
             'languages' => function () {                        // List of available languages (icons only)
@@ -108,7 +112,6 @@ return [
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
                 '/admin/menu' => '/menu',
                 '/admin/utility' => '/utility',
-                
             //    'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',

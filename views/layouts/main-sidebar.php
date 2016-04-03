@@ -40,10 +40,10 @@ use codezeen\yii2\adminlte\widgets\Menu;
         $admin_site_menu[10] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/admin']];
         $admin_site_menu[20] = ['label' => Yii::t('app', 'Roles'), 'url' => ['/permit/access/role']];
         $admin_site_menu[30] = ['label' => Yii::t('app', 'Permissions'), 'url' => ['/permit/access/permission']];
-      //  $admin_site_menu[40] = ['label' => Yii::t('app', 'Gallery'), 'url' => ['/gallery/gallery/index']];
+        $admin_site_menu[40] = ['label' => Yii::t('app', 'Gallery'), 'url' => ['/gallery']];
         //$admin_site_menu[50] = ['label' => Yii::t('app', 'Backup'), 'url' => ['/admin/backup']];
         $admin_site_menu[60] = ['label' => Yii::t('app', 'Menu'), 'url' => ['/admin/menu']];
-        //  $admin_site_menu[70] = ['label' => Yii::t('app', 'Pages'), 'url' => ['/admin/pages']];
+         $admin_site_menu[70] = ['label' => Yii::t('app', 'Pages'), 'url' => ['/admin/pages']];
         $admin_site_menu[80] = 
             ['label' => Yii::t('language', 'Language'),  'options' => ['class' => 'treeview'], 'items' => [
                     [ 'label' => Yii::t('language', 'List of languages'), 'url' => ['/admin/translatemanager/language/list']],
