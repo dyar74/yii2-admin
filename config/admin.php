@@ -10,10 +10,7 @@ return [
             'class' => 'wolfguard\gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        'statics' => [
-            'class' => 'sim4nix\statics\Module',
-            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-        ],
+        
         'menu' => [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
