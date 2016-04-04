@@ -21,6 +21,7 @@
         "dektrium/yii2-user": "0.9.5@dev",
         "wolfguard/yii2-gallery": "*",
         "sim4nix/yii2-static-module": "*",
+        "sim4nix/yii2-widgets": "*",
         "pceuropa/yii2-menu":"dev-master",
         "c006/yii2-migration-utility": "dev-master"
         
