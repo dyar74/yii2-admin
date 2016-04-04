@@ -10,7 +10,27 @@ return [
             'class' => 'wolfguard\gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        
+        'pages' => [
+            'class' => 'bupy7\pages\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'pathToImages' => '@webroot/uploads/images',
+            'urlToImages' => '@webroot/uploads/images',
+            'pathToFiles' => '@webroot/uploads/files',
+            'urlToFiles' => '@webroot/files',
+            'uploadImage' => true,
+            'uploadFile' => true,
+            'addImage' => true,
+            'addFile' => true,
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
+        ],
         'menu' => [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
@@ -106,6 +126,7 @@ return [
                 '/admin/utility' => '/utility',
                 '/admin/gallery' => '/gallery/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
+                '/admin/pages/manager' => '/pages/manager',
             //    'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',
