@@ -20,6 +20,7 @@
         "zelenin/yii2-slug-behavior": "~1.0@stable",
         "dektrium/yii2-user": "0.9.5@dev",
         "wolfguard/yii2-gallery": "*",
+        "sim4nix/yii2-static-module": "*",
         "pceuropa/yii2-menu":"dev-master",
         "c006/yii2-migration-utility": "dev-master"
         
