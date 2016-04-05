@@ -128,7 +128,7 @@ return [
                 '/admin/gallery' => '/gallery/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
                 '/admin/pages/manager/<action:[\w-]+>/<id:\d+>' => '/pages/manager/<action:[\w-]+>/<id:\d+>',
-                'pages/<page:[\w-]+>' => 'pages/default/index',
+              //  'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',
             //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'
