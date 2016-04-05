@@ -11,6 +11,10 @@ return [
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
         'pages' => [
+            'class' => 'lenarx\pages\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            ],
+     /*   'pages' => [
             'class' => 'bupy7\pages\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'pathToImages' => '@webroot/uploads/images',
@@ -30,7 +34,7 @@ return [
                     ],
                 ]
             ],
-        ],
+        ],*/
         'menu' => [
             'class' => 'pceuropa\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
