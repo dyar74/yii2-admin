@@ -22,12 +22,8 @@
         "wolfguard/yii2-gallery": "*",
         "bupy7/yii2-pages": "*",
         "pceuropa/yii2-menu":"dev-master",
-        "c006/yii2-migration-utility": "dev-master",
-        "lenarx/yii2-cms-pages" : "*"
-        
-        
-      
-        
+        "c006/yii2-migration-utility": "dev-master"
+  
     },
     "autoload": {
         "psr-4": {
