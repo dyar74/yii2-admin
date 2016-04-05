@@ -144,7 +144,8 @@ return [
             'theme' => [
                 'pathMap' => [
                     '@dektrium/user/views/admin' => '@dyar74/admin/views/user',
-                    '@bupy7/pages/views/manager' => '@dyar74/admin/views/manager'
+                    '@bupy7/pages/views/manager' => '@dyar74/admin/views/manager',
+                    '@pceuropa/menu/views/index' => '@dyar74/admin/views/menu/index'
                 ],
             ],
         ],
