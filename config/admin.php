@@ -137,9 +137,11 @@ return [
                 '/admin/translatemanager/language/list' => '/translatemanager/language/list',
                 '/admin/translatemanager/language/scan' => '/translatemanager/language/scan',
                 '/admin/translatemanager/language/optimizer' => '/translatemanager/language/optimizer',
-                '/admin/menu' => '/menu',
+                '/admin/menu' => '/menu/menu',
                 '/admin/utility' => '/utility',
+                '/admin/setting' => '/setting',
                 '/admin/gallery' => '/gallery/admin',
+                '/admin/block' =>'/block/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
                 '/admin/pages/manager/<action:[\w-]+>/<id:\d+>' => '/pages/manager/<action:[\w-]+>/<id:\d+>',
             //  'pages/<page:[\w-]+>' => 'pages/default/index',
@@ -184,6 +186,24 @@ return [
                 //         'enableCaching' => true,
                 ],
                 'bupy7/pages/core' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'funson86/setting' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'block' => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'db' => 'db',
                     'sourceLanguage' => 'en-US', // Developer language
