@@ -34,19 +34,55 @@ return [
         'menu' => [
             'class' => 'cornernote\menu\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
         ],
         'setting' => [
             'class' => 'funson86\setting\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-            'controllerNamespace' => 'funson86\setting\controllers'
+            'controllerNamespace' => 'funson86\setting\controllers',
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
         ],
-        'video_gallery' => [
-            'class' => 'wolfguard\video_gallery\Module',
+        'video-gallery' => [
+            'class' => 'wolfguard\video-gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
         ],
         'block' => [
             'class' => 'wolfguard\block\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
         ],
         /*  'gridview' => [
           'class' => '\kartik\grid\Module'
@@ -141,6 +177,7 @@ return [
                 '/admin/utility' => '/utility',
                 '/admin/setting' => '/setting',
                 '/admin/gallery' => '/gallery/admin',
+                '/admin/video-gallery' => '/video-gallery/admin',
                 '/admin/block' =>'/block/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
                 '/admin/pages/manager/<action:[\w-]+>/<id:\d+>' => '/pages/manager/<action:[\w-]+>/<id:\d+>',
