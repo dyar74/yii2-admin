@@ -5,10 +5,28 @@ return [
         'utility' => [
             'class' => 'c006\utility\migration\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
         ],
         'gallery' => [
             'class' => 'wolfguard\gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'as access' => [ // if you need to set access
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ],
+                ]
+            ],
         ],
         'pages' => [
             'class' => 'bupy7\pages\Module',
@@ -178,7 +196,7 @@ return [
                 '/admin/setting' => '/setting',
                 '/admin/gallery' => '/gallery/admin',
                 '/admin/video-gallery' => '/video_gallery/admin',
-                '/admin/block' =>'/block/admin',
+                '/admin/block' => '/block/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
                 '/admin/pages/manager/<action:[\w-]+>/<id:\d+>' => '/pages/manager/<action:[\w-]+>/<id:\d+>',
             //  'pages/<page:[\w-]+>' => 'pages/default/index',
@@ -259,6 +277,33 @@ return [
                 //         'enableCaching' => true,
                 ],
                 'gallery' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'utility'  => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'menu'  => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'user'  => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'db' => 'db',
                     'sourceLanguage' => 'en-US', // Developer language
