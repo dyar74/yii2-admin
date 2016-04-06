@@ -59,7 +59,7 @@ return [
             ],
         ],
         'video_gallery' => [
-            'class' => 'wolfguard\video-gallery\Module',
+            'class' => 'wolfguard\video_gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'as access' => [ // if you need to set access
                 'class' => 'yii\filters\AccessControl',
@@ -177,7 +177,7 @@ return [
                 '/admin/utility' => '/utility',
                 '/admin/setting' => '/setting',
                 '/admin/gallery' => '/gallery/admin',
-                '/admin/video-gallery' => '/video-gallery/admin',
+                '/admin/video-gallery' => '/video_gallery/admin',
                 '/admin/block' =>'/block/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
                 '/admin/pages/manager/<action:[\w-]+>/<id:\d+>' => '/pages/manager/<action:[\w-]+>/<id:\d+>',
@@ -241,6 +241,24 @@ return [
                 //         'enableCaching' => true,
                 ],
                 'block' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'video_gallery' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
+                'gallery' => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'db' => 'db',
                     'sourceLanguage' => 'en-US', // Developer language
