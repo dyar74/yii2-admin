@@ -58,7 +58,7 @@ return [
                 ]
             ],
         ],
-        'video-gallery' => [
+        'video_gallery' => [
             'class' => 'wolfguard\video-gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'as access' => [ // if you need to set access
