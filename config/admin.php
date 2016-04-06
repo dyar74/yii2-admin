@@ -10,7 +10,6 @@ return [
             'class' => 'wolfguard\gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
-        
         'pages' => [
             'class' => 'bupy7\pages\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
@@ -31,9 +30,22 @@ return [
                     ],
                 ]
             ],
-        ], 
+        ],
         'menu' => [
-            'class' => 'pceuropa\menu\Module',
+            'class' => 'cornernote\menu\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+        ],
+        'setting' => [
+            'class' => 'itzen\setting\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+            'controllerNamespace' => 'itzen\setting\controllers'
+        ],
+        'video_gallery' => [
+            'class' => 'wolfguard\video_gallery\Module',
+            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
+        ],
+        'block' => [
+            'class' => 'wolfguard\block\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
         /*  'gridview' => [
@@ -91,7 +103,9 @@ return [
         ],
     ],
     'components' => [
-
+        'setting' => [
+            'class' => 'itzen\setting\Setting',
+        ],
         'translatemanager' => [
             'class' => 'lajax\translatemanager\Component',
         ],
@@ -128,7 +142,7 @@ return [
                 '/admin/gallery' => '/gallery/admin',
                 '/admin/gallery/<action:[\w-]+>/<id:\d+>' => '/gallery/admin/<action:[\w-]+>/<id:\d+>',
                 '/admin/pages/manager/<action:[\w-]+>/<id:\d+>' => '/pages/manager/<action:[\w-]+>/<id:\d+>',
-              //  'pages/<page:[\w-]+>' => 'pages/default/index',
+            //  'pages/<page:[\w-]+>' => 'pages/default/index',
             //   '/admin/user/admin/create' => '/user/admin/create',
             //   '/admin/user/admin' => '/user/admin',
             //   '/admin/permit/user/view:[\w-]+>/<id:\d+>' => 'permit/user/view:[\w-]+>/<id:\d+>'
@@ -145,7 +159,7 @@ return [
                 'pathMap' => [
                     '@dektrium/user/views/admin' => '@dyar74/admin/views/user',
                     '@bupy7/pages/views/manager' => '@dyar74/admin/views/manager',
-                    '@pceuropa/menu/views/index' => '@dyar74/admin/views/menu/index'
+                //             '@pceuropa/menu/views/index' => '@dyar74/admin/views/menu/index'
                 ],
             ],
         ],

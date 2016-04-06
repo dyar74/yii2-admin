@@ -21,8 +21,12 @@
         "dektrium/yii2-user": "0.9.5@dev",
         "wolfguard/yii2-gallery": "*",
         "bupy7/yii2-pages": "*",
-        "pceuropa/yii2-menu":"dev-master",
-        "c006/yii2-migration-utility": "dev-master"
+        
+        "c006/yii2-migration-utility": "dev-master",
+        "itzen/yii2-setting": "*",
+         "wolfguard/yii2-video-gallery": "*",
+         "wolfguard/yii2-block": "*",
+         "cornernote/yii2-menu": "*"
   
     },
     "autoload": {
