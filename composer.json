@@ -23,7 +23,7 @@
         "bupy7/yii2-pages": "*",
         
         "c006/yii2-migration-utility": "dev-master",
-        "itzen/yii2-setting": "*",
+        "funson86/yii2-setting": "*",
          "wolfguard/yii2-video-gallery": "*",
          "wolfguard/yii2-block": "*",
          "cornernote/yii2-menu": "*"

@@ -36,9 +36,9 @@ return [
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
         ],
         'setting' => [
-            'class' => 'itzen\setting\Module',
+            'class' => 'funson86\setting\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-            'controllerNamespace' => 'itzen\setting\controllers'
+            'controllerNamespace' => 'funson86\setting\controllers'
         ],
         'video_gallery' => [
             'class' => 'wolfguard\video_gallery\Module',
@@ -104,7 +104,7 @@ return [
     ],
     'components' => [
         'setting' => [
-            'class' => 'itzen\setting\Setting',
+            'class' => 'funson86\setting\Setting',
         ],
         'translatemanager' => [
             'class' => 'lajax\translatemanager\Component',
