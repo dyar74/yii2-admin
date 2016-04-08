@@ -1,6 +1,6 @@
 <?php
 return [
-    'bootstrap' => ['translatemanager'],
+    'bootstrap' => [ 'translatemanager'],
     'modules' => [
         'utility' => [
             'class' => 'c006\utility\migration\Module',
@@ -51,9 +51,6 @@ return [
         ],
         'menu' => [
             'class' => 'cornernote\menu\Module',
-            'controllerMap' => [
-                'menu' => 'dyar74\admin\controllers\MenuController',
-            ],
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
             'as access' => [ // if you need to set access
                 'class' => 'yii\filters\AccessControl',
@@ -64,7 +61,6 @@ return [
                     ],
                 ]
             ],
-            
         ],
         'setting' => [
             'class' => 'funson86\setting\Module',
@@ -106,7 +102,9 @@ return [
                 ]
             ],
         ],
-        
+        /*  'gridview' => [
+          'class' => '\kartik\grid\Module'
+          ], */
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
@@ -218,7 +216,7 @@ return [
                 'pathMap' => [
                     '@dektrium/user/views/admin' => '@dyar74/admin/views/user',
                     '@bupy7/pages/views/manager' => '@dyar74/admin/views/manager',
-                    '@cornernote/menu/views/menu' => '@dyar74/admin/views/menu'
+                //             '@pceuropa/menu/views/index' => '@dyar74/admin/views/menu/index'
                 ],
             ],
         ],
@@ -315,15 +313,6 @@ return [
                 //         'enableCaching' => true,
                 ],
                 'db_rbac' => [
-                    'class' => 'yii\i18n\DbMessageSource',
-                    'db' => 'db',
-                    'sourceLanguage' => 'en-US', // Developer language
-                    'sourceMessageTable' => 'language_source',
-                    'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
-                ],
-                'rbac' => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'db' => 'db',
                     'sourceLanguage' => 'en-US', // Developer language
