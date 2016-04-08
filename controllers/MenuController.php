@@ -3,7 +3,6 @@
 namespace dyar74\admin\controllers;
 
 use dyar74\admin\models\Menu;
-
 use cornernote\menu\models\MenuSearch;
 use cornernote\menu\controllers\MenuController as MainController;
 use yii\web\Controller;
@@ -11,6 +10,7 @@ use Yii;
 use yii\web\HttpException;
 use yii\filters\AccessControl;
 use cornernote\returnurl\ReturnUrl;
+use lajax\translatemanager\helpers\Language;
 
 /**
  * MenuController implements the actions for Menu model.
@@ -18,7 +18,13 @@ use cornernote\returnurl\ReturnUrl;
 class MenuController extends MainController
 {
 
-  public function actionView($id)
+    public function init()
+    {
+        Language::registerAssets();
+        parent::init();
+    }
+
+    public function actionView($id)
     {
         $model = $this->findModel($id);
 
@@ -60,5 +66,4 @@ class MenuController extends MainController
         }
         throw new HttpException(404, 'The requested page does not exist.');
     }
-
 }

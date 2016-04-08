@@ -332,6 +332,15 @@ return [
                 //         'cachingDuration' => 86400,
                 //         'enableCaching' => true,
                 ],
+                'database' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //         'cachingDuration' => 86400,
+                //         'enableCaching' => true,
+                ],
             ],
         ],
     ],
