@@ -17,9 +17,9 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%auth_assignment}}', [
                     'item_name' => 'VARCHAR(64) NOT NULL',
-                 //   0 => 'PRIMARY KEY (`item_name`)',
+                    //   0 => 'PRIMARY KEY (`item_name`)',
                     'user_id' => 'VARCHAR(64) NOT NULL',
-               //     1 => 'KEY (`user_id`)',
+                    //     1 => 'KEY (`user_id`)',
                     'created_at' => 'INT(11) NULL',
                     ], $tableOptions_mysql);
                 $this->addPrimaryKey('item_name-user_id_pk', '{{%auth_assignment}}', ['item_name', 'user_id']);
@@ -47,12 +47,11 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%auth_item_child}}', [
                     'parent' => 'VARCHAR(64) NOT NULL',
-              //      0 => 'PRIMARY KEY (`parent`)',
+                    //      0 => 'PRIMARY KEY (`parent`)',
                     'child' => 'VARCHAR(64) NOT NULL',
-             //       1 => 'KEY (`child`)',
+                    //       1 => 'KEY (`child`)',
                     ], $tableOptions_mysql);
                 $this->addPrimaryKey('parent-child_pk', '{{%auth_item_child}}', ['parent', 'child']);
-
             }
         }
 
@@ -148,9 +147,9 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%language_translate}}', [
                     'id' => 'INT(11) NOT NULL',
-                  //  0 => 'PRIMARY KEY (`id`)',
+                    //  0 => 'PRIMARY KEY (`id`)',
                     'language' => 'VARCHAR(5) NOT NULL',
-                 //   1 => 'KEY (`language`)',
+                    //   1 => 'KEY (`language`)',
                     'translation' => 'TEXT NULL',
                     ], $tableOptions_mysql);
                 $this->addPrimaryKey('id-language_pk', '{{%language_translate}}', ['id', 'language']);
@@ -261,12 +260,12 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%token}}', [
                     'user_id' => 'INT(11) NOT NULL',
-                //    0 => 'PRIMARY KEY (`user_id`)',
+                    //    0 => 'PRIMARY KEY (`user_id`)',
                     'code' => 'VARCHAR(32) NOT NULL',
-                //    1 => 'KEY (`code`)',
+                    //    1 => 'KEY (`code`)',
                     'created_at' => 'INT(11) NOT NULL',
                     'type' => 'SMALLINT(6) NOT NULL',
-               //     3 => 'KEY (`type`)',
+                    //     3 => 'KEY (`type`)',
                     ], $tableOptions_mysql);
                 $this->addPrimaryKey('user_id-code_type_pk', '{{%token}}', ['user_id', 'code', 'type']);
             }
@@ -292,7 +291,38 @@ class m160419_124214_all_tables extends Migration
                     ], $tableOptions_mysql);
             }
         }
+        if (!in_array('video_gallery', $tables)) {
+            if ($dbType == "mysql") {
+                $this->createTable('{{%video_gallery}}', [
+                    'id' => 'INT(11) NOT NULL AUTO_INCREMENT',
+                    0 => 'PRIMARY KEY (`id`)',
+                    'code' => 'VARCHAR(255) NOT NULL',
+                    'name' => 'VARCHAR(255) NOT NULL',
+                    'description' => 'TEXT NULL',
+                    'sort' => 'INT(11) NULL DEFAULT \'500\'',
+                    'created_at' => 'INT(11) NOT NULL',
+                    'updated_at' => 'INT(11) NOT NULL',
+                    ], $tableOptions_mysql);
+            }
+        }
 
+        /* MYSQL */
+        if (!in_array('video_gallery_item', $tables)) {
+            if ($dbType == "mysql") {
+                $this->createTable('{{%video_gallery_item}}', [
+                    'id' => 'INT(11) NOT NULL AUTO_INCREMENT',
+                    0 => 'PRIMARY KEY (`id`)',
+                    'video_gallery_id' => 'INT(11) NOT NULL',
+                    'url' => 'VARCHAR(255) NULL',
+                    'title' => 'VARCHAR(255) NULL',
+                    'code' => 'VARCHAR(255) NOT NULL',
+                    'description' => 'TEXT NULL',
+                    'sort' => 'INT(11) NULL DEFAULT \'500\'',
+                    'created_at' => 'INT(11) NOT NULL',
+                    'updated_at' => 'INT(11) NOT NULL',
+                    ], $tableOptions_mysql);
+            }
+        }
 
         $this->createIndex('idx_rule_name_7383_00', 'auth_item', 'rule_name', 0);
         $this->createIndex('idx_type_7383_01', 'auth_item', 'type', 0);
@@ -316,6 +346,18 @@ class m160419_124214_all_tables extends Migration
         $this->createIndex('idx_UNIQUE_user_id_6468_19', 'token', 'user_id', 1);
         $this->createIndex('idx_UNIQUE_email_65_20', 'user', 'email', 1);
         $this->createIndex('idx_UNIQUE_username_65_21', 'user', 'username', 1);
+        $this->createIndex('idx_UNIQUE_code_9995_00', 'video_gallery', 'code', 1);
+        $this->createIndex('idx_name_9996_01', 'video_gallery', 'name', 0);
+        $this->createIndex('idx_sort_9996_02', 'video_gallery', 'sort', 0);
+        $this->createIndex('idx_UNIQUE_code_0683_03', 'video_gallery_item', 'code', 1);
+        $this->createIndex('idx_video_gallery_id_0683_04', 'video_gallery_item', 'video_gallery_id', 0);
+        $this->createIndex('idx_sort_0683_05', 'video_gallery_item', 'sort', 0);
+        $this->createIndex('idx_url_0683_06', 'video_gallery_item', 'url', 0);
+        $this->createIndex('idx_title_0683_07', 'video_gallery_item', 'title', 0);
+
+        $this->execute('SET foreign_key_checks = 0');
+        $this->addForeignKey('fk_video_gallery_0679_00', '{{%video_gallery_item}}', 'video_gallery_id', '{{%video_gallery}}', 'id', 'CASCADE', 'RESTRICT');
+        $this->execute('SET foreign_key_checks = 1;');
 
         $this->execute('SET foreign_key_checks = 0');
         $this->addForeignKey('fk_auth_item_7246_00', '{{%auth_assignment}}', 'item_name', '{{%auth_item}}', 'name', 'CASCADE', 'RESTRICT');
@@ -817,7 +859,7 @@ class m160419_124214_all_tables extends Migration
         $this->insert('{{%menu}}', ['id' => '14', 'tree' => '13', 'lft' => '2', 'rgt' => '3', 'depth' => '1', 'name' => 'Home', 'url' => '/', 'code' => 'home']);
         $this->insert('{{%menu}}', ['id' => '15', 'tree' => '1', 'lft' => '7', 'rgt' => '8', 'depth' => '2', 'name' => 'New event 2', 'url' => '/new-event2', 'code' => 'event2']);
         $this->insert('{{%menu}}', ['id' => '16', 'tree' => '1', 'lft' => '13', 'rgt' => '14', 'depth' => '2', 'name' => 'New Gallery', 'url' => '/gallery1', 'code' => 'gallery1']);
-         $this->insert('{{%page}}', ['id' => '2', 'title' => 'HOME', 'alias' => 'home', 'published' => '1', 'content' => 'Телефон
+        $this->insert('{{%page}}', ['id' => '2', 'title' => 'HOME', 'alias' => 'home', 'published' => '1', 'content' => 'Телефон
 
 HOME PAGE
 ', 'title_browser' => 'HOME', 'meta_keywords' => '', 'meta_description' => '', 'created_at' => '2016-04-04 06:46:39', 'updated_at' => '2016-04-05 01:05:47']);
@@ -899,6 +941,12 @@ HOME PAGE
         $this->execute('SET foreign_key_checks = 1;');
         $this->execute('SET foreign_key_checks = 0');
         $this->execute('DROP TABLE IF EXISTS `user`');
+        $this->execute('SET foreign_key_checks = 1;');
+        $this->execute('SET foreign_key_checks = 0');
+        $this->execute('DROP TABLE IF EXISTS `video_gallery`');
+        $this->execute('SET foreign_key_checks = 1;');
+        $this->execute('SET foreign_key_checks = 0');
+        $this->execute('DROP TABLE IF EXISTS `video_gallery_item`');
         $this->execute('SET foreign_key_checks = 1;');
         return false;
     }
