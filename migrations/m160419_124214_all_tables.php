@@ -22,7 +22,7 @@ class m160419_124214_all_tables extends Migration
                //     1 => 'KEY (`user_id`)',
                     'created_at' => 'INT(11) NULL',
                     ], $tableOptions_mysql);
-                $this->addPrimaryKey('item_name-user_id_pk', 'item_name-user_id', ['item_name', 'user_id']);
+                $this->addPrimaryKey('item_name-user_id_pk', '{{%auth_assignment}}', ['item_name', 'user_id']);
             }
         }
 
@@ -51,7 +51,7 @@ class m160419_124214_all_tables extends Migration
                     'child' => 'VARCHAR(64) NOT NULL',
              //       1 => 'KEY (`child`)',
                     ], $tableOptions_mysql);
-                $this->addPrimaryKey('parent-child_pk', 'parent-child', ['parent', 'child']);
+                $this->addPrimaryKey('parent-child_pk', '{{%auth_item_child}}', ['parent', 'child']);
 
             }
         }
@@ -153,7 +153,7 @@ class m160419_124214_all_tables extends Migration
                  //   1 => 'KEY (`language`)',
                     'translation' => 'TEXT NULL',
                     ], $tableOptions_mysql);
-                $this->addPrimaryKey('id-language_pk', 'id-language', ['id', 'language']);
+                $this->addPrimaryKey('id-language_pk', '{{%language_translate}}', ['id', 'language']);
             }
         }
 
@@ -268,7 +268,7 @@ class m160419_124214_all_tables extends Migration
                     'type' => 'SMALLINT(6) NOT NULL',
                //     3 => 'KEY (`type`)',
                     ], $tableOptions_mysql);
-                $this->addPrimaryKey('user_id-code_type_pk', 'user_id-code-type', ['user_id', 'code', 'type']);
+                $this->addPrimaryKey('user_id-code_type_pk', '{{%token}}', ['user_id', 'code', 'type']);
             }
         }
 
