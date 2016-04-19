@@ -812,43 +812,7 @@ class m160419_124214_all_tables extends Migration
         $this->insert('{{%menu}}', ['id' => '14', 'tree' => '13', 'lft' => '2', 'rgt' => '3', 'depth' => '1', 'name' => 'Home', 'url' => '/', 'code' => 'home']);
         $this->insert('{{%menu}}', ['id' => '15', 'tree' => '1', 'lft' => '7', 'rgt' => '8', 'depth' => '2', 'name' => 'New event 2', 'url' => '/new-event2', 'code' => 'event2']);
         $this->insert('{{%menu}}', ['id' => '16', 'tree' => '1', 'lft' => '13', 'rgt' => '14', 'depth' => '2', 'name' => 'New Gallery', 'url' => '/gallery1', 'code' => 'gallery1']);
-        $this->insert('{{%migration}}', ['version' => 'm000000_000000_base', 'apply_time' => '1459260427']);
-        $this->insert('{{%migration}}', ['version' => 'm140209_132017_init', 'apply_time' => '1459260472']);
-        $this->insert('{{%migration}}', ['version' => 'm140403_174025_create_account_table', 'apply_time' => '1459260473']);
-        $this->insert('{{%migration}}', ['version' => 'm140504_113157_update_tables', 'apply_time' => '1459260474']);
-        $this->insert('{{%migration}}', ['version' => 'm140504_130429_create_token_table', 'apply_time' => '1459260474']);
-        $this->insert('{{%migration}}', ['version' => 'm140506_102106_rbac_init', 'apply_time' => '1459260430']);
-        $this->insert('{{%migration}}', ['version' => 'm140701_090001_init', 'apply_time' => '1459713224']);
-        $this->insert('{{%migration}}', ['version' => 'm140830_171933_fix_ip_field', 'apply_time' => '1459260474']);
-        $this->insert('{{%migration}}', ['version' => 'm140830_172703_change_account_table_name', 'apply_time' => '1459260474']);
-        $this->insert('{{%migration}}', ['version' => 'm141002_030233_translate_manager', 'apply_time' => '1459332567']);
-        $this->insert('{{%migration}}', ['version' => 'm141021_075310_init', 'apply_time' => '1459713529']);
-        $this->insert('{{%migration}}', ['version' => 'm141129_130551_create_filemanager_mediafile_table', 'apply_time' => '1459344083']);
-        $this->insert('{{%migration}}', ['version' => 'm141203_173402_create_filemanager_owners_table', 'apply_time' => '1459344083']);
-        $this->insert('{{%migration}}', ['version' => 'm141203_175538_add_filemanager_owners_ref_mediafile_fk', 'apply_time' => '1459344084']);
-        $this->insert('{{%migration}}', ['version' => 'm141208_201488_setting_init', 'apply_time' => '1459938661']);
-        $this->insert('{{%migration}}', ['version' => 'm141222_110026_update_ip_field', 'apply_time' => '1459260474']);
-        $this->insert('{{%migration}}', ['version' => 'm141222_135246_alter_username_length', 'apply_time' => '1459260474']);
-        $this->insert('{{%migration}}', ['version' => 'm141224_163110_init', 'apply_time' => '1459932606']);
-        $this->insert('{{%migration}}', ['version' => 'm141225_163115_init', 'apply_time' => '1459716015']);
-        $this->insert('{{%migration}}', ['version' => 'm141226_163116_init', 'apply_time' => '1459932607']);
-        $this->insert('{{%migration}}', ['version' => 'm150211_094318_init', 'apply_time' => '1459713634']);
-        $this->insert('{{%migration}}', ['version' => 'm150217_082719_add_default_permissions', 'apply_time' => '1459713634']);
-        $this->insert('{{%migration}}', ['version' => 'm150309_153255_create_tree_manager_table', 'apply_time' => '1459597875']);
-        $this->insert('{{%migration}}', ['version' => 'm150407_084217_gallery', 'apply_time' => '1459514756']);
-        $this->insert('{{%migration}}', ['version' => 'm150420_075510_add_public_column', 'apply_time' => '1459713634']);
-        $this->insert('{{%migration}}', ['version' => 'm150429_155009_create_page_table', 'apply_time' => '1459771026']);
-        $this->insert('{{%migration}}', ['version' => 'm150528_073125_add_slider_field', 'apply_time' => '1459713635']);
-        $this->insert('{{%migration}}', ['version' => 'm150614_103145_update_social_account_table', 'apply_time' => '1459260475']);
-        $this->insert('{{%migration}}', ['version' => 'm150621_065345_menu', 'apply_time' => '1459932667']);
-        $this->insert('{{%migration}}', ['version' => 'm150623_164544_auth_items', 'apply_time' => '1459597875']);
-        $this->insert('{{%migration}}', ['version' => 'm150623_212711_fix_username_notnull', 'apply_time' => '1459260475']);
-        $this->insert('{{%migration}}', ['version' => 'm150918_031100_auth_items', 'apply_time' => '1459597875']);
-        $this->insert('{{%migration}}', ['version' => 'm151012_083954_initial', 'apply_time' => '1459344084']);
-        $this->insert('{{%migration}}', ['version' => 'm151012_085909_initial_categories', 'apply_time' => '1459344084']);
-        $this->insert('{{%migration}}', ['version' => 'm151216_173850_create_menu_table', 'apply_time' => '1459515364']);
-        $this->insert('{{%migration}}', ['version' => 'm160110_222213_add_name_column', 'apply_time' => '1459932667']);
-        $this->insert('{{%page}}', ['id' => '2', 'title' => 'HOME', 'alias' => 'home', 'published' => '1', 'content' => 'Телефон
+         $this->insert('{{%page}}', ['id' => '2', 'title' => 'HOME', 'alias' => 'home', 'published' => '1', 'content' => 'Телефон
 
 HOME PAGE
 ', 'title_browser' => 'HOME', 'meta_keywords' => '', 'meta_description' => '', 'created_at' => '2016-04-04 06:46:39', 'updated_at' => '2016-04-05 01:05:47']);
