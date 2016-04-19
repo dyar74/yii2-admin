@@ -1,6 +1,6 @@
 <?php
 return [
-    'bootstrap' => ['translatemanager'],
+    'bootstrap' => ['translatemanager', 'languagepicker'],
     'modules' => [
         'utility' => [
             'class' => 'c006\utility\migration\Module',
@@ -230,8 +230,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //           'cachingDuration' => 86400,
-                //           'enableCaching' => true,
+                           'cachingDuration' => 86400,
+                           'enableCaching' => true,
                 ],
                 'app*' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -239,8 +239,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'bupy7/pages/core' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -248,8 +248,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'funson86/setting' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -257,8 +257,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'block' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -266,8 +266,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'video_gallery' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -275,8 +275,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'gallery' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -284,8 +284,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'utility'  => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -293,8 +293,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'menu'  => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -302,8 +302,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'user'  => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -311,8 +311,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'db_rbac' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -320,8 +320,8 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'rbac' => [
                     'class' => 'yii\i18n\DbMessageSource',
@@ -329,17 +329,18 @@ return [
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
                 'database' => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'db' => 'db',
+                    'forceTranslation' => true,
                     'sourceLanguage' => 'en-US', // Developer language
                     'sourceMessageTable' => 'language_source',
                     'messageTable' => 'language_translate',
-                //         'cachingDuration' => 86400,
-                //         'enableCaching' => true,
+                         'cachingDuration' => 86400,
+                         'enableCaching' => true,
                 ],
             ],
         ],

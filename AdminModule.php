@@ -6,6 +6,8 @@
  */
 
 namespace dyar74\admin;
+
+use Yii;
 use yii\base\Module as BaseAdminModule;
 //use asdfstudio\admin\Module as BaseAdminModule;
 //use app\modules\admin\entities\UserEntity;
@@ -17,13 +19,30 @@ use yii\base\Module as BaseAdminModule;
  */
 class AdminModule extends BaseAdminModule 
 {
-    public function init() {
+   public $controllerNamespace = 'dyar74\admin\controllers';
+
+    public function init()
+    {
         parent::init();
+        $this->registerTranslations();
+    }
 
-  //      $this->registerEntity(UserEntity::className()); // этот метод регистрирует сущность в админке
+    public function registerTranslations()
+    {
+        Yii::$app->i18n->translations['modules/dyar74/*'] = [
+            'class' => 'yii\i18n\DbMessageSource',
+                    'db' => 'db',
+                    'sourceLanguage' => 'en-US', // Developer language
+                    'sourceMessageTable' => 'language_source',
+                    'messageTable' => 'language_translate',
+                //           'cachingDuration' => 86400,
+                //           'enableCaching' => true,
+            
+        ];
+    }
 
-    //    $this->sidebar->addItem(UserEntity::className()); // а этот добавляет ссылку в сайдбар
-     //   $this->registerEntity(RbacEntity::className());
-    //    $this->sidebar->addItem(RbacEntity::className());
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('modules/dyar74/' . $category, $message, $params, $language);
     }
 }

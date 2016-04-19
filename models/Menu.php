@@ -18,7 +18,8 @@ use slatiusa\nestable\NestableBehavior;
  * @property string $name
  * @property string $code
  * @property string $url
- *
+ * @property string $name_t
+ * 
  * @mixin NestedSetsBehavior
  */
 class Menu extends MainMenu
@@ -85,12 +86,12 @@ class Menu extends MainMenu
 
     public static function toItems($menu)
     {
-        $menus = Menu::findOne(['name' => $menu]);
+        $menus = self::findOne(['name' => $menu]);
         $items = [];
         if (empty($menus)) {
             return false;
         } else {
-            $items = Menu::getMenuItems($menus);
+            $items = self::getMenuItems($menus);
 
             return $items;
         }
@@ -108,7 +109,7 @@ class Menu extends MainMenu
 
                 $items[] = ['label' =>  $childs->name, 'url' => ['#'],
                     'options' => ['class' => 'dropdown'],
-                    'items' => Menu::getMenuItems($childs),
+                    'items' => self::getMenuItems($childs),
                 ];
             } else {
                 $items[] = ['label' =>  $childs->name, 'url' => [$childs->url]];
