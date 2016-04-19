@@ -17,11 +17,12 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%auth_assignment}}', [
                     'item_name' => 'VARCHAR(64) NOT NULL',
-                    0 => 'PRIMARY KEY (`item_name`)',
+                 //   0 => 'PRIMARY KEY (`item_name`)',
                     'user_id' => 'VARCHAR(64) NOT NULL',
-                    1 => 'KEY (`user_id`)',
+               //     1 => 'KEY (`user_id`)',
                     'created_at' => 'INT(11) NULL',
                     ], $tableOptions_mysql);
+                $this->addPrimaryKey('item_name-user_id_pk', 'item_name-user_id', ['item_name', 'user_id']);
             }
         }
 
@@ -46,10 +47,12 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%auth_item_child}}', [
                     'parent' => 'VARCHAR(64) NOT NULL',
-                    0 => 'PRIMARY KEY (`parent`)',
+              //      0 => 'PRIMARY KEY (`parent`)',
                     'child' => 'VARCHAR(64) NOT NULL',
-                    1 => 'KEY (`child`)',
+             //       1 => 'KEY (`child`)',
                     ], $tableOptions_mysql);
+                $this->addPrimaryKey('parent-child_pk', 'parent-child', ['parent', 'child']);
+
             }
         }
 
@@ -145,11 +148,12 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%language_translate}}', [
                     'id' => 'INT(11) NOT NULL',
-                    0 => 'PRIMARY KEY (`id`)',
+                  //  0 => 'PRIMARY KEY (`id`)',
                     'language' => 'VARCHAR(5) NOT NULL',
-                    1 => 'KEY (`language`)',
+                 //   1 => 'KEY (`language`)',
                     'translation' => 'TEXT NULL',
                     ], $tableOptions_mysql);
+                $this->addPrimaryKey('id-language_pk', 'id-language', ['id', 'language']);
             }
         }
 
@@ -257,13 +261,14 @@ class m160419_124214_all_tables extends Migration
             if ($dbType == "mysql") {
                 $this->createTable('{{%token}}', [
                     'user_id' => 'INT(11) NOT NULL',
-                    0 => 'PRIMARY KEY (`user_id`)',
+                //    0 => 'PRIMARY KEY (`user_id`)',
                     'code' => 'VARCHAR(32) NOT NULL',
-                    1 => 'KEY (`code`)',
+                //    1 => 'KEY (`code`)',
                     'created_at' => 'INT(11) NOT NULL',
                     'type' => 'SMALLINT(6) NOT NULL',
-                    3 => 'KEY (`type`)',
+               //     3 => 'KEY (`type`)',
                     ], $tableOptions_mysql);
+                $this->addPrimaryKey('user_id-code_type_pk', 'user_id-code-type', ['user_id', 'code', 'type']);
             }
         }
 
@@ -327,7 +332,7 @@ class m160419_124214_all_tables extends Migration
 
         $this->execute('SET foreign_key_checks = 0');
         $this->insert('{{%auth_assignment}}', ['item_name' => 'admin', 'user_id' => '1', 'created_at' => '1459507147']);
-//        $this->insert('{{%auth_assignment}}', ['item_name' => 'root', 'user_id' => '3', 'created_at' => '1459427212']);
+        $this->insert('{{%auth_assignment}}', ['item_name' => 'admin', 'user_id' => '3', 'created_at' => '1459427212']);
         $this->insert('{{%auth_item}}', ['name' => 'admin', 'type' => '1', 'description' => 'Administrator', 'rule_name' => '', 'data' => '', 'created_at' => '1459321211', 'updated_at' => '1459507130']);
         $this->insert('{{%auth_item}}', ['name' => 'showGalleryModule', 'type' => '2', 'description' => 'Show gallery module in main-menu', 'rule_name' => '', 'data' => '', 'created_at' => '1459713634', 'updated_at' => '1459713634']);
         $this->insert('{{%auth_item}}', ['name' => 'showPagesModule', 'type' => '2', 'description' => 'Show pages module in main-menu', 'rule_name' => '', 'data' => '', 'created_at' => '1459713448', 'updated_at' => '1459713448']);
@@ -794,10 +799,10 @@ class m160419_124214_all_tables extends Migration
         $this->insert('{{%language_source}}', ['id' => '402', 'category' => 'database', 'message' => 'Home']);
         $this->insert('{{%language_translate}}', ['id' => '1', 'language' => 'uk-UA', 'translation' => 'В мережі']);
         $this->insert('{{%language_translate}}', ['id' => '5', 'language' => 'ru-RU', 'translation' => 'Главная']);
-   //     $this->insert('{{%language_translate}}', ['id' => '5', 'language' => 'uk-UA', 'translation' => 'Головна']);
+        $this->insert('{{%language_translate}}', ['id' => '5', 'language' => 'uk-UA', 'translation' => 'Головна']);
         $this->insert('{{%language_translate}}', ['id' => '7', 'language' => 'uk-UA', 'translation' => 'Головне Меню']);
         $this->insert('{{%language_translate}}', ['id' => '53', 'language' => 'ru-RU', 'translation' => 'Главная']);
-    //    $this->insert('{{%language_translate}}', ['id' => '53', 'language' => 'uk-UA', 'translation' => 'Головна']);
+        $this->insert('{{%language_translate}}', ['id' => '53', 'language' => 'uk-UA', 'translation' => 'Головна']);
         $this->insert('{{%language_translate}}', ['id' => '254', 'language' => 'uk-UA', 'translation' => 'Галерея']);
         $this->insert('{{%language_translate}}', ['id' => '383', 'language' => 'uk-UA', 'translation' => 'Новотек']);
         $this->insert('{{%language_translate}}', ['id' => '402', 'language' => 'uk-UA', 'translation' => 'Головна']);
