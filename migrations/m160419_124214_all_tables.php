@@ -794,7 +794,7 @@ class m160419_124214_all_tables extends Migration
         $this->insert('{{%language_source}}', ['id' => '402', 'category' => 'database', 'message' => 'Home']);
         $this->insert('{{%language_translate}}', ['id' => '1', 'language' => 'uk-UA', 'translation' => 'В мережі']);
         $this->insert('{{%language_translate}}', ['id' => '5', 'language' => 'ru-RU', 'translation' => 'Главная']);
-        $this->insert('{{%language_translate}}', ['id' => '5', 'language' => 'uk-UA', 'translation' => 'Головна']);
+   //     $this->insert('{{%language_translate}}', ['id' => '5', 'language' => 'uk-UA', 'translation' => 'Головна']);
         $this->insert('{{%language_translate}}', ['id' => '7', 'language' => 'uk-UA', 'translation' => 'Головне Меню']);
         $this->insert('{{%language_translate}}', ['id' => '53', 'language' => 'ru-RU', 'translation' => 'Главная']);
         $this->insert('{{%language_translate}}', ['id' => '53', 'language' => 'uk-UA', 'translation' => 'Головна']);
