@@ -10,9 +10,10 @@
 
 use yii\helpers\Html;
 use codezeen\yii2\adminlte\AdminLteAsset;
+use kartik\base\WidgetAsset as KvAsset;
 
 AdminLteAsset::register($this);
-
+KvAsset::register($this);
 /**
  * If you're using AdminLteAsset as dependency in AppAsset, then use AppAsset.
  * ```php
