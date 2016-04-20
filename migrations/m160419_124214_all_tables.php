@@ -375,7 +375,7 @@ class m160419_124214_all_tables extends Migration
         $this->execute('SET foreign_key_checks = 0');
         $this->insert('{{%auth_assignment}}', ['item_name' => 'admin', 'user_id' => '1', 'created_at' => '1459507147']);
         $this->insert('{{%auth_assignment}}', ['item_name' => 'admin', 'user_id' => '3', 'created_at' => '1459427212']);
-        $this->insert('{{%auth_item}}', ['name' => 'admin', 'type' => '1', 'description' => 'Administrator', 'rule_name' => '', 'data' => '', 'created_at' => '1459321211', 'updated_at' => '1459507130']);
+        $this->insert('{{%auth_item}}', ['name' => 'admin', 'type' => '1', 'description' => 'admin', 'rule_name' => null, 'data' => null, 'created_at' => '1459321211', 'updated_at' => '1459507130']);
         $this->insert('{{%auth_item}}', ['name' => 'showGalleryModule', 'type' => '2', 'description' => 'Show gallery module in main-menu', 'rule_name' => '', 'data' => '', 'created_at' => '1459713634', 'updated_at' => '1459713634']);
         $this->insert('{{%auth_item}}', ['name' => 'showPagesModule', 'type' => '2', 'description' => 'Show pages module in main-menu', 'rule_name' => '', 'data' => '', 'created_at' => '1459713448', 'updated_at' => '1459713448']);
         $this->insert('{{%auth_item_child}}', ['parent' => 'admin', 'child' => 'showGalleryModule']);
