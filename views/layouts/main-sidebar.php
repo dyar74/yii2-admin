@@ -9,6 +9,8 @@ use yii\helpers\Html;
 use cebe\gravatar\Gravatar;
 //use codezeen\yii2\adminlte\widgets\MainSidebar;
 use codezeen\yii2\adminlte\widgets\Menu;
+$module = Yii::$app->getModule('admin');
+$userItems = $module->userItems;
 
 ?>
 <aside class="main-sidebar">
@@ -56,14 +58,21 @@ use codezeen\yii2\adminlte\widgets\Menu;
         ];
         $admin_site_menu[90] = ['label' => Yii::t('app', 'Utilities'), 'url' => ['/admin/utility']];
         $admin_site_menu[100] = ['label' => Yii::t('app', 'Settings'), 'url' => ['/admin/setting']];
-        $admin_site_menu[200] = ['label' => Yii::t('app', 'User'), 'options' => ['class' => 'treeview'], 'items' => [
+        if (!empty($userItems)) {
+            $index = max(array_keys($admin_site_menu)) + 10;
+            $admin_site_menu[$index] = $userItems;
+        }
+        $admin_site_menu[500] = ['label' => Yii::t('app', 'User'), 'options' => ['class' => 'treeview'], 'items' => [
                 [ 'label' => Yii::t('app', 'Login'), 'url' => ['/user/login'], 'visible' => Yii::$app->user->isGuest],
                 [ 'label' => Yii::t('app', 'Logout'), 'url' => ['/user/logout'], 'linkOptions' => ['data-method' => 'post'], 'visible' => !Yii::$app->user->isGuest],
         ]];
 
         // Short the menu
         ksort($admin_site_menu);
-
+        if (!empty($userItems)) {
+            $index = max(array_keys($admin_site_menu)) + 10;
+            $admin_site_menu[$index] = $userItems;
+        }
         echo Menu::widget([
             'options' => ['class' => 'sidebar-menu'],
             'labelTemplate' => '<a href="#">{icon}<span>{label}</span>{right-icon}{badge}</a>',

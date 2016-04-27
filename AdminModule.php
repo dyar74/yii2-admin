@@ -19,8 +19,9 @@ use yii\base\Module as BaseAdminModule;
  */
 class AdminModule extends BaseAdminModule 
 {
-   public $controllerNamespace = 'dyar74\admin\controllers';
-
+    public $controllerNamespace = 'dyar74\admin\controllers';
+    public $userItems = [];
+    
     public function init()
     {
         parent::init();
