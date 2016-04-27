@@ -69,10 +69,7 @@ $userItems = $module->userItems;
 
         // Short the menu
         ksort($admin_site_menu);
-        if (!empty($userItems)) {
-            $index = max(array_keys($admin_site_menu)) + 10;
-            $admin_site_menu[$index] = $userItems;
-        }
+        
         echo Menu::widget([
             'options' => ['class' => 'sidebar-menu'],
             'labelTemplate' => '<a href="#">{icon}<span>{label}</span>{right-icon}{badge}</a>',
