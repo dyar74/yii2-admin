@@ -47,7 +47,12 @@ $webroot = dirname($basePath);
 'modules' => [
         'admin' => [
             'class' => 'dyar74\admin\AdminModule',
-             'userItems' => ['label' => Yii::t('app', 'Test'), 'url' => ['/admin/test']], //if you have add items to admin menu
+             'userItems' => ['label' => Yii::t('admin', 'User Block Extensions'), 'options' => ['class' => 'treeview'], 'items' => [
+                    [ 'label' => Yii::t('admin', 'Ext1'), 'url' => ['#']],
+                    [ 'label' => Yii::t('admin', 'Ext2'), 'url' => ['#']],
+                    [ 'label' => Yii::t('admin', 'Ext3'), 'url' => ['#']],
+                ]
+            ], //if you have add items to admin menu
         ],..
 ]
 Change return to(see you path to vendor):
