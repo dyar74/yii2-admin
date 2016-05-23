@@ -24,7 +24,9 @@ use slatiusa\nestable\NestableBehavior;
  */
 class Menu extends MainMenu
 {
-
+    
+    public $name_t;
+    
     public function behaviors()
     {
         return [
@@ -58,7 +60,7 @@ class Menu extends MainMenu
     /**
      * @inheritdoc
      */
-    public $name_t;
+    
 
     public function afterFind()
     {
