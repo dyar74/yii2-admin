@@ -2,19 +2,6 @@
 return [
     'bootstrap' => ['translatemanager', 'languagepicker'],
     'modules' => [
-        'utility' => [
-            'class' => 'c006\utility\migration\Module',
-            'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
-            'as access' => [ // if you need to set access
-                'class' => 'yii\filters\AccessControl',
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['admin']
-                    ],
-                ]
-            ],
-        ],
         'gallery' => [
             'class' => 'wolfguard\gallery\Module',
             'layout' => '@vendor/dyar74/yii2-admin/views/layouts/admin.php',
@@ -287,15 +274,7 @@ return [
                          'cachingDuration' => 86400,
                          'enableCaching' => true,
                 ],
-                'utility'  => [
-                    'class' => 'yii\i18n\DbMessageSource',
-                    'db' => 'db',
-                    'sourceLanguage' => 'en-US', // Developer language
-                    'sourceMessageTable' => 'language_source',
-                    'messageTable' => 'language_translate',
-                         'cachingDuration' => 86400,
-                         'enableCaching' => true,
-                ],
+               
                 'menu'  => [
                     'class' => 'yii\i18n\DbMessageSource',
                     'db' => 'db',

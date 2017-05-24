@@ -18,10 +18,10 @@
         "developeruz/yii2-db-rbac": "*",
         "codezeen/yii2-adminlte": "*",
         "zelenin/yii2-slug-behavior": "~1.0@stable",
-        "dektrium/yii2-user": "0.9.5@dev",
+        "dektrium/yii2-user": "*",
         "wolfguard/yii2-gallery": "*",
         "bupy7/yii2-pages": "*",
-        "c006/yii2-migration-utility": "dev-master",
+        
         "funson86/yii2-setting": "*",
          "wolfguard/yii2-video-gallery": "*",
          "wolfguard/yii2-block": "*",

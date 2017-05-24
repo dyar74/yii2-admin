@@ -29,10 +29,11 @@ to the require section of your `composer.json` file.
 ```
 
 
-add  migrations for extensions:
-dektrium\yii2-user
-developeruz\yii2-db-rbac
-lajax\yii2-translate-manager
+add  migrations:
+ php yii migrate/up --migrationPath=@vendor/dyar74/yii2-admin/migrations
+
+default user: admin
+password: admin12345
 
 
 
@@ -40,8 +41,7 @@ lajax\yii2-translate-manager
 Usage
 -----
 add to config web.php: 
-$basePath = dirname(__DIR__);
-$webroot = dirname($basePath);
+
 'bootstrap' => ['admin'],
 'language' => 'uk-UA', // you default language
 'modules' => [
@@ -56,4 +56,4 @@ $webroot = dirname($basePath);
         ],..
 ]
 Change return to(see you path to vendor):
-return array_merge_recursive($config, require($webroot . '/vendor/dyar74/yii2-admin/config/admin.php'));
+return array_merge_recursive($config, require('../vendor/dyar74/yii2-admin/config/admin.php'));

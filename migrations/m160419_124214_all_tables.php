@@ -197,8 +197,8 @@ class m160419_124214_all_tables extends Migration
                     'title_browser' => 'VARCHAR(255) NULL',
                     'meta_keywords' => 'VARCHAR(200) NULL',
                     'meta_description' => 'VARCHAR(160) NULL',
-                    'created_at' => 'TIMESTAMP NOT NULL DEFAULT \'0000-00-00 00:00:00\'',
-                    'updated_at' => 'TIMESTAMP NOT NULL DEFAULT \'0000-00-00 00:00:00\'',
+                    'created_at' => 'TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP',
+                    'updated_at' => 'TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP',
                     ], $tableOptions_mysql);
             }
         }
