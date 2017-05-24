@@ -56,7 +56,7 @@ $userItems = $module->userItems;
                     [ 'label' => Yii::t('language', 'Optimize'), 'url' => ['/admin/translatemanager/language/optimizer']],
                 ]
         ];
-        $admin_site_menu[90] = ['label' => Yii::t('app', 'Utilities'), 'url' => ['/admin/utility']];
+        
         $admin_site_menu[100] = ['label' => Yii::t('app', 'Settings'), 'url' => ['/admin/setting']];
         if (!empty($userItems)) {
             $index = max(array_keys($admin_site_menu)) + 10;
